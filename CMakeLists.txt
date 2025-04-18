@@ -338,6 +338,8 @@ if (NOT DEFINED ${BUILD_TYPE}_CXX_FLAGS)
     set(ACTUAL_${BUILD_TYPE}_CXX_FLAGS ${DEFAULT_${BUILD_TYPE}_CXX_FLAGS})
 else ()
     set(ACTUAL_${BUILD_TYPE}_CXX_FLAGS ${${BUILD_TYPE}_CXX_FLAGS})
+    separate_arguments(${BUILD_TYPE}_CXX_FLAGS)
+    separate_arguments(ACTUAL_${BUILD_TYPE}_CXX_FLAGS)
 endif ()
 
 if (NOT ENABLE_MPI)
